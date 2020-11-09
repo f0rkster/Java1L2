@@ -1,43 +1,39 @@
 package de.forkster.java1;
 
-import java.lang.management.ManagementFactory;
+//import java.lang.management.ManagementFactory;
 
 class FirstClass {
 
     public static void main(String[] args)
     {
-        GameObject Obj1 = new GameObject();
-        Obj1.Spell = "Fitz";
-        Obj1.Value = 5;
-        GameObject Obj2 = new GameObject();
-        Obj2.Spell = "Quark";
-        Obj2.Value = 7;
+        GameObject gameObject1 = new GameObject(5, "Fitz");
+        GameObject gameObject2 = new GameObject(7, "Quark");
 
-        final GameObject DEVISOR [] = {Obj1, Obj2};
+        final GameObject[] divisor = {gameObject1, gameObject2};
 
-        String Output = "";
+        String output = "";
 
         int index = 1;
         while (index <= 100)
         {
-            for (int indexOfDevisor = 0; indexOfDevisor < DEVISOR.length; indexOfDevisor++)
+            for (int indexOfDivisor = 0; indexOfDivisor < divisor.length; indexOfDivisor++)
             {
-                if ( index % DEVISOR[indexOfDevisor].Value == 0)
+                if ( index % divisor[indexOfDivisor].Value == 0)
                 {
-                    Output += DEVISOR[indexOfDevisor].Spell;
+                    output += divisor[indexOfDivisor].Spell;
                 }
             }
 
-            if (Output != "")
+            if (!output.equals(""))
             {
-                System.out.println(Output);
+                System.out.println(output);
             }
             else
             {
                 System.out.println(index);
             }
 
-            Output = "";
+            output = "";
             index++;
         }
     }
