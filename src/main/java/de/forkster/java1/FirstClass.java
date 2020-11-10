@@ -13,8 +13,9 @@ class FirstClass {
 
         String output = "";
 
+        int numberOfIteration = 100;
         int index = 1;
-        while (index <= 100)
+        while (index <= numberOfIteration)
         {
             for (int indexOfDivisor = 0; indexOfDivisor < divisor.length; indexOfDivisor++)
             {
